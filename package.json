@@ -1,0 +1,27 @@
+{
+    "name": "@destination/eslint-config",
+    "version": "0.0.1",
+    "description": "Default ESLint config used by Destination",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wearedestination/eslint-config.git"
+    },
+    "license": "MIT",
+    "author": "Andy Palmer <andy.palmer@wearedestination.com>",
+    "main": "index.js",
+    "files": [
+        "index.js"
+    ],
+    "dependencies": {
+        "eslint-config-standard": "^17.1.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-n": "^16.0.0",
+        "eslint-plugin-promise": "^6.1.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.4.3"
+    },
+    "peerDependencies": {
+        "eslint": "^8.0.0"
+    }
+}
