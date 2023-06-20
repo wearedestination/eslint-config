@@ -1,4 +1,4 @@
-# Destination EsLint Config
+# Destination ESLint Config
 
 Defines a set of rules used by [ESLint](https://eslint.org/) to enforce our JS/TS coding standards.
 
