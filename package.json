@@ -13,10 +13,10 @@
         "index.js"
     ],
     "dependencies": {
-        "eslint-config-standard": "^17.1.0",
-        "eslint-plugin-import": "^2.27.5",
-        "eslint-plugin-n": "^16.0.0",
-        "eslint-plugin-promise": "^6.1.1"
+        "@typescript-eslint/eslint-plugin": "^5.60.0",
+        "@typescript-eslint/parser": "^5.60.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.26.0"
     },
     "devDependencies": {
         "eslint": "^8.4.3"

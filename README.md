@@ -2,8 +2,7 @@
 
 Defines a set of rules used by [ESLint](https://eslint.org/) to enforce our JS/TS coding standards.
 
-For the most part, this configuration uses [StandardJs](https://standardjs.com/) with a couple of tweaks to things
-like indentation and semicolons.
+This configuration uses the AirBnb style guide with a few tweaks.
 
 ## Installation
 
@@ -26,7 +25,7 @@ Add the following to your project's ruleset e.g. in `package.json`:
 Run `eslint` as normal e.g.:
 
 ```sh
-yarn eslint assets/js
+yarn eslint 'assets/**/*.{js,ts}'
 ```
 
 ## License
