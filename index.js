@@ -37,14 +37,7 @@ module.exports = {
         ],
         'import/prefer-default-export': 'off',
         'import/no-unresolved': 'off',
-        'import/extensions': [
-            'error',
-            'ignorePackages',
-            {
-                ts: 'never',
-                js: 'never'
-            }
-        ],
+        'import/extensions': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off'
     }
 };
