@@ -12,6 +12,11 @@
     "files": [
         "index.js"
     ],
+    "scripts": {
+        "prettier:check": "prettier . --check",
+        "prettier:write": "prettier . --write"
+    },
+    "prettier": "@destination/prettier-config",
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "^6.2.1",
         "@typescript-eslint/parser": "^6.2.1",
@@ -19,7 +24,9 @@
         "eslint-plugin-import": "^2.28.0"
     },
     "devDependencies": {
-        "eslint": "^8.46.0"
+        "@destination/prettier-config": "^3.0.0",
+        "eslint": "^8.46.0",
+        "prettier": "^3.0.1"
     },
     "peerDependencies": {
         "eslint": "^8.0.0"
