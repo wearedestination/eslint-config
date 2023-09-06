@@ -22,6 +22,7 @@ module.exports = {
         'arrow-parens': 'off',
         'no-shadow': 'off',
         'prefer-destructuring': 'off',
+        'operator-linebreak': 'off',
         'func-names': ['error', 'as-needed'],
         'no-confusing-arrow': [
             'error',
