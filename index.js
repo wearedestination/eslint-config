@@ -5,9 +5,10 @@ module.exports = {
     },
     extends: ['eslint-config-airbnb-base', 'plugin:@typescript-eslint/recommended'],
     rules: {
-        curly: 'error',
+        'curly': 'error',
         'no-undef': 'off',
-        indent: 'off',
+        'indent': 'off',
+        'quotes': 'off',
         'max-len': 'off',
         'function-paren-newline': 'off',
         'implicit-arrow-linebreak': 'off',
