@@ -1,19 +1,20 @@
 module.exports = {
     parserOptions: {
         parser: "@typescript-eslint/parser",
-        sourceType: "module"
+        sourceType: "module",
     },
     extends: ["eslint-config-airbnb-base", "plugin:@typescript-eslint/recommended"],
     rules: {
-        curly: ["error", "all"],
+        "curly": ["error", "all"],
         "no-undef": "off",
-        indent: "off",
-        quotes: "off",
+        "indent": "off",
+        "quotes": "off",
         "max-len": "off",
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "comma-dangle": "off",
         "object-curly-spacing": "off",
+        "newline-per-chained-call": "off",
         "lines-between-class-members": "off",
         "no-use-before-define": "off",
         "no-new": "off",
@@ -28,18 +29,18 @@ module.exports = {
         "no-confusing-arrow": [
             "error",
             {
-                onlyOneSimpleParam: true
-            }
+                "onlyOneSimpleParam": true,
+            },
         ],
         "no-param-reassign": [
             "error",
             {
-                props: false
-            }
+                "props": false,
+            },
         ],
         "import/prefer-default-export": "off",
         "import/no-unresolved": "off",
         "import/extensions": "off",
-        "@typescript-eslint/no-non-null-assertion": "off"
-    }
+        "@typescript-eslint/no-non-null-assertion": "off",
+    },
 };
