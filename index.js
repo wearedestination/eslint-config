@@ -5,7 +5,7 @@ module.exports = {
     },
     extends: ["eslint-config-airbnb-base", "plugin:@typescript-eslint/recommended"],
     rules: {
-        curly: "error",
+        curly: ["error", "all"],
         "no-undef": "off",
         indent: "off",
         quotes: "off",
