@@ -1,6 +1,6 @@
 {
     "name": "@destination/eslint-config",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "description": "Default ESLint config used by Destination",
     "repository": {
         "type": "git",
