@@ -42,5 +42,11 @@ module.exports = {
         "import/no-unresolved": "off",
         "import/extensions": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/array-type": [
+            "error",
+            {
+                "default": "array-simple",
+            },
+        ],
     },
 };
