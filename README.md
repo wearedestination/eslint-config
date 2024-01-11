@@ -2,7 +2,7 @@
 
 Defines a set of rules used by [ESLint](https://eslint.org/) to enforce our JS/TS coding standards.
 
-This configuration uses the AirBnb style guide with a few tweaks.
+This configuration uses the [Airbnb style guide](https://github.com/airbnb/javascript) with a few tweaks.
 
 ## Installation
 
