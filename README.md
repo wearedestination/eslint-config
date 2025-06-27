@@ -2,30 +2,45 @@
 
 Defines a set of rules used by [ESLint](https://eslint.org/) to enforce our JS/TS coding standards.
 
-This configuration uses the [Airbnb style guide](https://github.com/airbnb/javascript) with a few tweaks.
+Note that version 2 of this package uses the new [ESLint config format](https://eslint.org/docs/latest/use/configure/configuration-files-new)
+and requires ESLint v9.0.0 or later.
 
 ## Installation
 
 ```sh
-yarn add @destination/eslint-config eslint --dev
+bun add @destination/eslint-config eslint --dev
 ```
 
 ## Usage
 
-Add the following to your project's ruleset e.g. in `package.json`:
+Your `eslint.config.js` file should look something like this:
 
-```json
-{
-  "eslint": {
-    "extends": "@destination/eslint-config"
-  }
-}
+```js
+import { defineConfig } from "eslint/config";
+import destinationEsLintConfig from "@destination/eslint-config";
+
+export default defineConfig([
+  destinationEsLintConfig,
+  {
+    files: ['assets/**/*.{ts,js}'],
+    settings: {
+      "import-x/resolver": {
+        alias: {
+          map: [
+            ['@', './assets'],
+          ],
+        }
+      },
+    },
+  },
+]);
+
 ```
 
 Run `eslint` as normal e.g.:
 
 ```sh
-yarn eslint 'assets/**/*.{js,ts}'
+bun run eslint 'assets/**/*.{js,ts}'
 ```
 
 ## License
