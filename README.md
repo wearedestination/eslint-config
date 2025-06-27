@@ -16,9 +16,9 @@ Add the following to your project's ruleset e.g. in `package.json`:
 
 ```json
 {
-    "eslint": {
-        "extends": "@destination/eslint-config"
-    }
+  "eslint": {
+    "extends": "@destination/eslint-config"
+  }
 }
 ```
 

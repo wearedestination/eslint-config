@@ -1,64 +1,63 @@
-module.exports = {
-    parserOptions: {
-        parser: "@typescript-eslint/parser",
-        sourceType: "module",
+import js from "@eslint/js";
+import globals from "globals";
+import tseslint from "typescript-eslint";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
+import importPlugin from "eslint-plugin-import-x";
+import eslintPluginUnicorn from "eslint-plugin-unicorn";
+import * as tsResolver from "eslint-import-resolver-typescript";
+
+export default tseslint.config(
+  {
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommendedTypeChecked,
+      importPlugin.flatConfigs.recommended,
+      importPlugin.flatConfigs.typescript,
+      eslintPluginUnicorn.configs.recommended,
+    ],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: globals.browser,
+      parserOptions: {
+        parser: tseslint.parser,
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
-    extends: ["eslint-config-airbnb-base", "plugin:@typescript-eslint/recommended"],
     rules: {
-        "curly": ["error", "all"],
-        "no-undef": "off",
-        "indent": "off",
-        "quotes": "off",
-        "max-len": "off",
-        "function-paren-newline": "off",
-        "implicit-arrow-linebreak": "off",
-        "comma-dangle": "off",
-        "object-curly-spacing": "off",
-        "newline-per-chained-call": "off",
-        "lines-between-class-members": "off",
-        "no-use-before-define": "off",
-        "no-new": "off",
-        "object-curly-newline": "off",
-        "no-console": "off",
-        "no-plusplus": "off",
-        "arrow-parens": "off",
-        "no-shadow": "off",
-        "prefer-destructuring": "off",
-        "operator-linebreak": "off",
-        "func-names": ["error", "as-needed"],
-        "no-confusing-arrow": [
-            "error",
-            {
-                "onlyOneSimpleParam": true,
-            },
-        ],
-        "no-param-reassign": [
-            "error",
-            {
-                "props": false,
-            },
-        ],
-        "import/prefer-default-export": "off",
-        "import/no-unresolved": "off",
-        "import/extensions": "off",
-        "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/array-type": [
-            "error",
-            {
-                "default": "array-simple",
-            },
-        ],
-        "@typescript-eslint/no-unused-vars": [
-            "error",
-            {
-                "args": "all",
-                "argsIgnorePattern": "^_",
-                "caughtErrors": "all",
-                "caughtErrorsIgnorePattern": "^_",
-                "destructuredArrayIgnorePattern": "^_",
-                "varsIgnorePattern": "^_",
-                "ignoreRestSiblings": true,
-            },
-        ],
+      "no-console": ["error", { allow: ["warn", "error", "info"] }],
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-misused-promises": [
+        "error",
+        {
+          checksVoidReturn: false,
+        },
+      ],
+      "unicorn/filename-case": [
+        "error",
+        {
+          cases: {
+            kebabCase: true,
+            pascalCase: true,
+          },
+        },
+      ],
+      "unicorn/prevent-abbreviations": "off",
+      "unicorn/prefer-global-this": "off",
     },
-};
+    settings: {
+      "import-x/resolver": {
+        name: "tsResolver",
+        options: {
+          bun: true,
+        },
+        resolver: tsResolver,
+      },
+    },
+  },
+  eslintConfigPrettier,
+);

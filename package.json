@@ -1,35 +1,36 @@
 {
-    "name": "@destination/eslint-config",
-    "version": "1.4.3",
-    "description": "Default ESLint config used by Destination",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/wearedestination/eslint-config.git"
-    },
-    "license": "MIT",
-    "author": "Andy Palmer <andy.palmer@wearedestination.com>",
-    "main": "index.js",
-    "files": [
-        "index.js"
-    ],
-    "scripts": {
-        "prettier:check": "prettier . --check",
-        "prettier:write": "prettier . --write"
-    },
-    "prettier": {
-        "quoteProps": "preserve"
-    },
-    "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.18.1",
-        "@typescript-eslint/parser": "^6.18.1",
-        "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-plugin-import": "^2.29.1"
-    },
-    "devDependencies": {
-        "eslint": "^8.56.0",
-        "prettier": "^3.1.1"
-    },
-    "peerDependencies": {
-        "eslint": "^8.0.0"
-    }
+  "name": "@destination/eslint-config",
+  "version": "1.4.3",
+  "description": "Default ESLint config used by Destination",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wearedestination/eslint-config.git"
+  },
+  "license": "MIT",
+  "author": "Andy Palmer <andy.palmer@wearedestination.com>",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "prettier:check": "prettier . --check",
+    "prettier:write": "prettier . --write"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-unicorn": "^59.0.1",
+    "globals": "^16.2.0",
+    "typescript-eslint": "^8.35.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.29.0",
+    "prettier": "^3.1.1"
+  },
+  "peerDependencies": {
+    "eslint": "^9.29.0"
+  }
 }
