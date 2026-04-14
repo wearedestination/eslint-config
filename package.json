@@ -4,7 +4,7 @@
   "description": "Default ESLint config used by Destination",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wearedestination/eslint-config.git"
+    "url": "git+https://github.com/wearedestination/eslint-config.git"
   },
   "license": "MIT",
   "author": "Andy Palmer <andy.palmer@wearedestination.com>",
