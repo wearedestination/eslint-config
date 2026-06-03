@@ -7,8 +7,8 @@ and requires ESLint v9.0.0 or later.
 
 ## Installation
 
-```sh
-bun add @destination/eslint-config eslint --dev
+```console
+npm install eslint @destination/eslint-config --save-dev
 ```
 
 ## Usage
