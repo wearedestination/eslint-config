@@ -23,14 +23,14 @@ Or, if you need to specify additional configuration:
 
 ```js
 import { defineConfig, globalIgnores } from "eslint/config";
-import destinationEsLintConfigVue from "@destination/eslint-config-vue";
+import destinationEsLintConfig from "@destination/eslint-config";
 
 export default defineConfig([
   globalIgnores([
     "assets/some-ignored-file.ts",
     "assets/another-ignored-file.ts",
   ]),
-  destinationEsLintConfigVue,
+  destinationEsLintConfig,
   {
     languageOptions: {
       globals: {
