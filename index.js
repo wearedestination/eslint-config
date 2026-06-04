@@ -4,7 +4,7 @@ import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import importPlugin from "eslint-plugin-import-x";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
-import * as tsResolver from "eslint-import-resolver-typescript";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 
 export default tseslint.config(
   {
@@ -50,13 +50,17 @@ export default tseslint.config(
       "unicorn/prefer-global-this": "off",
     },
     settings: {
-      "import-x/resolver": {
-        name: "tsResolver",
-        options: {
-          bun: true,
-        },
-        resolver: tsResolver,
-      },
+      "import-x/resolver-next": [
+        createTypeScriptImportResolver({
+          alwaysTryTypes: true,
+          // Match every tsconfig at the project root so path aliases declared
+          // in solution-style setups (e.g. an `@/*` path in tsconfig.app.json
+          // referenced from a root tsconfig.json) resolve without each project
+          // needing its own resolver override.
+          project: ["tsconfig.json", "tsconfig.*.json"],
+          noWarnOnMultipleProjects: true,
+        }),
+      ],
     },
   },
   eslintConfigPrettier,
