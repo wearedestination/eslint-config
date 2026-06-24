@@ -37,6 +37,13 @@ export default tseslint.config(
           checksVoidReturn: false,
         },
       ],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
       "unicorn/filename-case": [
         "error",
         {
