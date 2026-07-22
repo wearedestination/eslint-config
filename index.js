@@ -26,6 +26,7 @@ export default tseslint.config(
       },
     },
     rules: {
+      curly: ["error", "all"],
       "no-console": ["error", { allow: ["warn", "error", "info"] }],
       "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
