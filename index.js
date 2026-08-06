@@ -26,7 +26,6 @@ export default tseslint.config(
       },
     },
     rules: {
-      curly: ["error", "all"],
       "no-console": ["error", { allow: ["warn", "error", "info"] }],
       "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
@@ -72,4 +71,15 @@ export default tseslint.config(
     },
   },
   eslintConfigPrettier,
+  {
+    // Must come after eslintConfigPrettier, which disables `curly` outright: its
+    // "multi-line"/"multi-or-nest" options judge braces by whether a statement
+    // fits on one line, which is Prettier's decision, not the author's. That
+    // can't conflict under "all" (Prettier never adds or removes braces), but a
+    // static config can't tell which option we picked — so it turns the rule off
+    // for everyone and documents re-enabling it here.
+    rules: {
+      curly: ["error", "all"],
+    },
+  },
 );
