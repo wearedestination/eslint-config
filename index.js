@@ -6,6 +6,23 @@ import importPlugin from "eslint-plugin-import-x";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 
+// Rules eslint-config-prettier switches off but which are safe under the options
+// we use, so we switch them back on. `curly` is disabled outright because its
+// "multi-line"/"multi-or-nest" options judge braces by whether a statement fits on
+// one line — Prettier's decision, not the author's. That can't conflict under
+// "all" (Prettier never adds or removes braces), but a static config can't tell
+// which option we picked, so it turns the rule off for everyone.
+//
+// Exported because these must be applied *after* eslintConfigPrettier. Any config
+// extending this one that re-applies eslintConfigPrettier itself (as
+// @destination/eslint-config-vue must, to disable eslint-plugin-vue's stylistic
+// rules) has to re-apply these last as well, or it silently undoes them.
+export const prettierSafeOverrides = {
+  rules: {
+    curly: ["error", "all"],
+  },
+};
+
 export default tseslint.config(
   {
     extends: [
@@ -71,15 +88,5 @@ export default tseslint.config(
     },
   },
   eslintConfigPrettier,
-  {
-    // Must come after eslintConfigPrettier, which disables `curly` outright: its
-    // "multi-line"/"multi-or-nest" options judge braces by whether a statement
-    // fits on one line, which is Prettier's decision, not the author's. That
-    // can't conflict under "all" (Prettier never adds or removes braces), but a
-    // static config can't tell which option we picked — so it turns the rule off
-    // for everyone and documents re-enabling it here.
-    rules: {
-      curly: ["error", "all"],
-    },
-  },
+  prettierSafeOverrides,
 );
