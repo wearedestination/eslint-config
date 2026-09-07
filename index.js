@@ -70,6 +70,7 @@ export default tseslint.config(
           },
         },
       ],
+      "unicorn/name-replacements": "off",
       "unicorn/prevent-abbreviations": "off",
       "unicorn/prefer-global-this": "off",
     },
