@@ -61,6 +61,21 @@ export default tseslint.config(
           varsIgnorePattern: "^_",
         },
       ],
+      "import-x/order": [
+        "error",
+        {
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+          ],
+          alphabetize: { order: "asc", caseInsensitive: true },
+          named: true,
+        },
+      ],
       "unicorn/filename-case": [
         "error",
         {
